@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        body,html{
+            height:100%;
+            width:100%;
+            scroll-behavior: smooth;
+        }
+        #main{
+            height:100%;
+            width:100%;
+            /* background-color: blueviolet; */
+        }
+        #main #navforphone{
+            height:100%;
+            width:100%;
+            display:flex;
+            flex-direction: column;
+            /* padding-top:80px; */
+            gap:40px;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        #main #navforphone h3{
+            text-transform: uppercase;
+        }
+        #main #navbar{
+            height:100px;
+            width:100%;
+            position:fixed;
+            background-color: white;
+            top:0;
+            display: flex;
+            justify-content: space-between;
+            padding:40px 30px;
+            border-bottom:1px solid #eaeaea;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+        }
+        #main #navbar #nav1{
+            display: flex;
+            width:200px;
+            height:100px;
+        }
+        #main #navbar #nav1 img {
+            width:60px;
+            margin-top:20px;
+            border-radius: 50%;
+            position: absolute;
+            top:0;
+        }
+        #main #navbar #nav2 img{
+            display:none;
+            width:35px;
+            height:35px;
+            object-fit: cover;
+        }
+        #main #navbar #nav2{
+            display: flex;
+            gap:20px;
+        }
+        #main #navbar #nav2 h3{
+            display: flex;
+            gap:40px;
+            text-transform: uppercase;
+        }
+        #main #navbar #nav2 i{
+            display:none;
+        }
+        #main #page1{
+            width:100%;
+            height:100vh;
+            /* background-color: blue; */
+            padding-top:100px;
+            display:flex;
+
+        }
+        #main #page1 #left{
+            height:100%;
+            width:50%;
+            /* background-color: aquamarine; */
+            padding:30px 40px;
+            display: flex;
+            flex-direction: column;
+            gap:7px;
+        }
+        #main #page1 #left .details{
+            font-size:20px;
+        }
+        #main #page1 #left #name{
+            font-size:25px;
+        }
+        #main #page1 #left h1{
+            font-size: 70px;
+        }
+        #main #page1 #right{
+            height:100%;
+            width:50%;
+            /* background-color: red; */
+            display:flex;
+            /* flex-direction:column ; */
+            justify-content:center;
+            align-items:center;
+        }
+        #main #page1 #right img{
+            /* margin-top:150px; */
+           height:590px;
+           width:400px;
+           object-fit: cover;
+           border-radius:10px;
+
+        }
+        #main #page1 #left #buttons{
+            display:flex;
+            margin-top:10px;
+        }
+        #main #page1 #left #buttons button{
+            width: fit-content;
+                padding:10px 20px;
+                border:none;
+                outline:none;
+                background-color: brown;
+                color:white;
+                font-size:20px;
+                font-weight:500;
+                border-radius: 5px;
+                cursor:pointer;
+        }
+        #main #page1 #left #buttons button:hover{
+                background-color: black;
+            }
+            #main #page2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            width:100%;
+            /* padding-top:100px; */
+            /* background-color: green; */
+        }
+        #main #page2 #about{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height:300px;
+            width:1400px;
+            border: 2px solid #b2acac;
+            box-shadow:10px 10px 10px rgba(0,0,0,0.2);
+            padding:30px 40px;
+            border-radius:20px;
+        }
+        #main #page2 #about p{
+            font-size:20px;
+        }
+        #main #page3{
+            height:100vh;
+            width:100%;
+            /* background-color: blue; */
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(./pexels-josiah-farrow-3396651\ \(1\).jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        #main #page3 #kindle_details{
+            height:300px;
+            width:600px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding:30px 40px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+        }
+        #main #page3 #kindle_details #link a{
+            display:flex;
+            gap:3px;
+            align-items: center;
+        }
+        #main #page3 #kindle_details #link i{
+            font-size:25px;
+        }
+       #main #page4 {
+            height:70vh;
+            width:100%;
+            /* background-color: blue; */
+            display:flex;
+            flex-direction: column;
+        }
+        #main #page4 #contact{
+           height:60%;
+           width:100%;
+           background-color: burlywood;
+           padding:30px 40px;
+        }
+        #main #page4 #contact h2{
+            /* text-align: center; */
+            margin-top:20px;
+            font-size:40px;
+        }
+        #main #page4 #contact #social{
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top:20px;
+            gap:50px;
+        }
+        #main #page4 #contact #social .contact_container{
+            display:flex;
+            gap:4px;
+            align-items: center;
+            font-size:large;
+        }
+        #main #page4 footer{
+            height:40%;
+            width:100%;
+            background-color: #2D2E32;
+            display:flex;
+            justify-content: flex-start;
+            padding-left:40px;
+            align-items: center;
+            color: white;
+            gap:40px;
+            font-size: larger;
+        }
+        #main #page4 footer a{
+            color:tomato
+        }
+        @media (max-width:600px){
+            #page1{
+                flex-direction: column;
+
+            }
+            #main #page1 #left{
+                width:100%;
+                height:50%
+            }
+            #main #page1 #right{
+                width:100%;
+                height:50%
+            }
+            #main #navbar #nav2 h3{
+                display:none;
+            }
+            #main #navbar #nav2 i{
+                display: block;
+                font-size:30px
+            }
+            #main #page1 #left{
+                gap:0px;
+            }
+            #main #page1 #left .details{
+                font-size:13px;
+            }
+            #main #page1 #left #name{
+                font-size:16px;
+            }
+            #main #page1 #left h1{
+            font-size: 30px;
+        }
+        #main #page1 #left #buttons button{
+            width: fit-content;
+                padding:5px 10px;
+                border:none;
+                outline:none;
+                background-color: brown;
+                color:white;
+                font-size:10px;
+                font-weight:500;
+                border-radius: 5px;
+                cursor:pointer;
+        }
+        #main #page1 #right img{
+            height:300px;
+            width:200px;
+            object-fit: cover;
+            margin-top:150px;
+        }
+        #main #page2{
+            padding-top:100px;
+            height:100vh;
+            width:100%;
+        }
+        #main #page2 #about{
+
+            height:500px;
+            width:100%;
+            /* background-color: red; */
+        }
+        #main #page2 #about p{
+            font-size:13px;
+        }
+        #main #page4 #contact #social{
+            flex-direction: column;
+            gap:20px;
+            
+        }
+        #main #page4 #contact h2{
+            font-size:30px;
+        }
+        #main #page4 #contact #social .contact_container{
+            display:flex;
+            gap:4px;
+            align-items: flex-start;
+            font-size:10px;
+        }
+        #main #page4 footer{
+            padding-left:20px;
+            font-size:10px;
+            padding-top: 100px;
+            align-items: flex-start;
+            flex-direction: column;
+            gap:10px;
+        
+        }
+    }
+        a{
+            text-decoration: none;
+            color:black
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="navbar">
+            <div id="nav1">
+                <a href="#page1"><img src="./Black & White Minimalist Aesthetic Initials Font Logo (1).png" alt=""></a>
+            </div>
+            <div id="nav2">
+                <h3><a href="#page1">home</a>
+                    <a href="#page2">about</a>
+                    <a href="#page3">kindle</a>
+                    <a href="#page4">contact</a>
+                </h3>
+                <i class="ri-menu-line"></i>
+                <img id="xmark" src="./x-mark.png" alt="">
+            </div>
+        </div>
+        <div id="navforphone">
+            <h3><a href="#page1">Home</a></h3>
+            <h3><a href="#page2">about</a></h3>
+            <h3><a href="#page3">Kindle</a></h3>
+            <h3><a href="#page4">contact</a></h3>
+        </div>
+        <div id="page1">
+            <div id="left">
+                <h1>THE ABANDONED HOUSE ON THE LUCKNOW STREET</h1>
+                <p id="name">~ <span>Kartikeya Ruhela</span></p>
+                <p class="details">Published on <span>april 2023</span></p>
+                <p class="details">Genre: <span>Horror</span></p>
+                <p class="details">Pages: <span>24</span></p>
+                <p class="details">Language: <span>English</span></p>
+                <div id="buttons">
+                    <a href="./The Abandoned house on Lucknow street by Kartikeya ruhela.pdf" target="_blank"><button>Read Now</button></a>
+                <p style="margin-left:20px;margin-right:20px; margin-top:10px;">OR</p>
+                
+                <a href="./The Abandoned house on Lucknow street by Kartikeya ruhela.pdf" download><button>Download</button></a>
+                </div>
+            </div>
+            <div id="right">
+                <img src="./book.jpg" alt="">
+            </div>
+        </div>
+        <div id="page2">
+            <div id="about">
+                <h1 style="margin-bottom:10px;">ABOUT THE BOOK</h1>
+                <p>"Abandoned House on the Lucknow street" is one of the best horror tale that will keep you on the corner of your seat. Gaurang, a YouTuber with a craze of old things slips upon an abandoned house in Lucknow with a dark history. Despite the warnings of locals, he buys the house and starts making daily vlogs. But as paranormal activities begin to occur, Gaurang and his friend Harsh dive deep into the history of the house, uncovering a horrifying past of murder and black magic.As they investigate further, they find themselves trapped in the house, facing their worst nightmares and struggling to survive against the sinister that haunt the house. In this heart-pumping tale, Gaurang and Harsh must fight for their lives and confront the horrors of the abandoned house before it's too late. Will they make it out alive, or will they surrender to the shadows that hide within the house? Get ready for a terrifying journey that will leave you trembling until the very end</p>
+            </div>
+        </div>
+        <div id="page3">
+            <div id="kindle_details">
+                <h1>Read this book on Amazon Kindle</h1>
+                <h3>Link to Kindle is given below</h3>
+                <div id="link">
+                   <a href=""> <i class="ri-share-box-fill"></i>
+                    <h2>click here
+                    </h2></a>
+                </div>
+            </div>
+            
+        </div>
+        <div id="page4">
+            <div id="contact">
+                <h2>
+                    Contact
+                </h2>
+               <div id="social">
+                <div id="mail" class="contact_container">
+                    <i class="ri-mail-line"></i>
+                    <h3>Email: kartikruhela672@gmail.com</h3>
+                </div>
+                <div id="instagram" class="contact_container">
+                    <i class="ri-instagram-line"></i>
+                    <h3>Instagram: <a href="https://www.instagram.com/kartikey_ruhela/">@kartikey_ruhela</a></h3>
+                </div>
+                <div id="linkedin" class="contact_container">
+                    <i class="ri-linkedin-box-line"></i>
+                    <h3>Linkedin: <a href="https://www.linkedin.com/in/kartikey-ruhela-0bbab424a/">kartikeya ruhela</a></h3>
+                </div>
+               </div>
+              
+            </div>
+            <footer>
+                <h2>Copyright © 2023. All rights are reserved</h2>
+                <a href="./app-release.apk"><h3>Download our mobile app</h3></a>
+            </footer>
+        </div>
+    </div>
+    <script>
+        const menu = document.querySelector("i");
+        const xmark = document.querySelector("#main #navbar #nav2 img");
+        const navforphone = document.querySelector("#main #navforphone");
+        menu.addEventListener("click",()=>{
+            navforphone.style.display = "flex";
+            menu.style.display = "none";
+            xmark.style.display = "block";
+        });
+        xmark.addEventListener("click",()=>{
+            navforphone.style.display = "none";
+            menu.style.display = "block";
+            xmark.style.display = "none";
+        });
+        menu.addEventListener("click",scrollToTop);
+       function scrollToTop() {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+         }
+    </script>
+</body>
+</html>
